@@ -13,11 +13,17 @@
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-native": "0.72.5",
+<<<<<<< HEAD
     "react-dom": "18.2.0",
     "react-native-web": "~0.19.6",
     "@expo/webpack-config": "^19.0.0",
     "expo-notifications": "~0.20.1",
     "expo-device": "~5.4.0"
+=======
+    "expo-notifications": "~0.20.1",
+    "expo-device": "~5.4.0",
+    "expo-constants": "~14.4.2"
+>>>>>>> 14b84f4f79f5c244554ca761efe3ea3be1e5dc6a
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
