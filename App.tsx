@@ -18,10 +18,10 @@ Notifications.setNotificationHandler({
 // Can use this function below or use Expo's Push Notification Tool from: https://expo.dev/notifications
 async function sendPushNotification(expoPushToken: Notifications.ExpoPushToken | undefined) {
   const message = {
-    to: expoPushToken,
+    to: expoPushToken?.data,
     sound: 'default',
     title: 'Original Title',
-    body: 'And here is the body!',
+    body: 'testing new body!',
     data: { someData: 'goes here' },
   };
 
@@ -84,7 +84,7 @@ export default function App() {
     });
 
     responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-      console.log(response);
+      console.log('RESPONSE:', response);
     });
 
     return () => {
@@ -95,7 +95,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-around' }}>
-      <Text><>Your expo push token: {expoPushToken}</></Text>
+      <Text><>Your expo push token: {expoPushToken?.data}</></Text>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>Title: {notification && notification.request.content.title} </Text>
         <Text>Body: {notification && notification.request.content.body}</Text>
